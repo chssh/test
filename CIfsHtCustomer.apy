@@ -10,7 +10,7 @@
 --  ------  ------  ---------------------------------------------------------
 -----------------------------------------------------------------------------
 
-DEFINE MODULE        = ORDER
+DEFINE MODULE        = ORDER1111
 DEFINE LU            = CIfsHtCustomer
 DEFINE TABLE         = C_IFS_HT_CUSTOMER_TAB
 DEFINE VIEW          = C_IFS_HT_CUSTOMER
