@@ -87,7 +87,7 @@ FROM    c_ifs_ht_customer_tab
 WITH   read only;
 
 COMMENT ON TABLE &VIEW1
-   IS 'LU=&LU^PROMPT=C Ifs Ht Customer^MODULE=&MODULE^';
+   IS 'LU=&LU^PROMPT=C Ifs Ht Customer^MODULE=&MODULE^';1111
 COMMENT ON COLUMN &VIEW1..company
    IS 'FLAGS=KMI-L^DATATYPE=STRING(5)^PROMPT=Company^';
 COMMENT ON COLUMN &VIEW1..custid
