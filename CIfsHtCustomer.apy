@@ -15,10 +15,10 @@ DEFINE LU            = CIfsHtCustomer
 DEFINE TABLE         = C_IFS_HT_CUSTOMER_TAB
 DEFINE VIEW          = C_IFS_HT_CUSTOMER
 DEFINE VIEW1         = C_IFS_HT_CUST_LOV
-DEFINE PKG           = C_IFS_HT_CUSTOMER_API
+DEFINE PKG           = C_IFS_HT_CUSTOMER_API1111
 
 DEFINE OBJID         = rowid
-DEFINE OBJVERSION    = "ltrim(lpad(to_char(rowversion,'YYYYMMDDHH24MISS'),2000))"
+DEFINE OBJVERSION    = "ltrim(lpad(to_char(rowversion,'YYYYMMDDHH24MISS'),2000))"111
 
 -----------------------------------------------------------------------------
 -------------------- VIEWS FOR SELECTS --------------------------------------
@@ -29,10 +29,10 @@ PROMPT Creating &VIEW view
 CREATE OR REPLACE VIEW &VIEW AS
 SELECT sequ_id					                 sequ_id,
        company                                                   company,
-       custid					                 custid,
+       custid					                 custid,111
        code                                                      code,
        C_IFS_HT_CUSTOMER_API.Get_Detail_Data(company,custid,'CUSTNAME')  custname,
-       C_IFS_HT_CUSTOMER_API.Get_Detail_Data(company,custid,'BREVITY_CODE')  brevity_code,
+       C_IFS_HT_CUSTOMER_API.Get_Detail_Data(company,custid,'BREVITY_C111ODE')  brevity_code,
        C_IFS_HT_CUSTOMER_API.Get_Detail_Data(company,custid,'TAX_NUMNER')  tax_numner,
        C_IFS_HT_CUSTOMER_API.Get_Detail_Data(company,custid,'ADDRESS_PHONE')  address_phone,
        C_IFS_HT_CUSTOMER_API.Get_Detail_Data(company,custid,'BANK_ACCOUNT')  bank_account,
