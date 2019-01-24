@@ -1,0 +1,95 @@
+-----------------------------------------------------------------------------
+--
+--  Logical unit: CIfsHtCustomer
+--
+--  IFS/Design Template Version 2.5
+--
+--  Date    Sign    History
+--  ------  ------  ---------------------------------------------------------
+-----------------------------------------------------------------------------
+
+DEFINE MODULE        = ORDER
+DEFINE LU            = CIfsHtCustomer
+DEFINE PKG           = C_IFS_HT_CUSTOMER_API
+
+PROMPT Creating &PKG specification
+
+CREATE OR REPLACE PACKAGE &PKG IS
+
+module_  CONSTANT VARCHAR2(25) := '&MODULE';
+lu_name_ CONSTANT VARCHAR2(25) := '&LU';
+lu_type_ CONSTANT VARCHAR2(6)  := 'Entity';
+
+
+
+-----------------------------------------------------------------------------
+-------------------- PRIVATE BASE METHODS -----------------------------------
+-----------------------------------------------------------------------------
+
+PROCEDURE Lock__ (
+   info_       OUT VARCHAR2,
+   objid_      IN  VARCHAR2,
+   objversion_ IN  VARCHAR2);
+
+PROCEDURE New__ (
+   info_       OUT    VARCHAR2,
+   objid_      OUT    VARCHAR2,
+   objversion_ OUT    VARCHAR2,
+   attr_       IN OUT VARCHAR2,
+   action_     IN     VARCHAR2);
+
+PROCEDURE Modify__ (
+   info_       OUT    VARCHAR2,
+   objid_      IN     VARCHAR2,
+   objversion_ IN OUT VARCHAR2,
+   attr_       IN OUT VARCHAR2,
+   action_     IN     VARCHAR2);
+
+PROCEDURE Remove__ (
+   info_       OUT VARCHAR2,
+   objid_      IN  VARCHAR2,
+   objversion_ IN  VARCHAR2,
+   action_     IN  VARCHAR2);
+
+-----------------------------------------------------------------------------
+-------------------- PUBLIC BASE METHODS ------------------------------------
+-----------------------------------------------------------------------------
+PROCEDURE Exist (
+   sequ_id_  IN NUMBER,
+   company_  IN VARCHAR2,
+   custid_   IN VARCHAR2);
+
+   
+-----------------------------------------------------------------------------
+-------------------- FOUNDATION1 METHODS ------------------------------------
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+--Project Name:CKC HT Replace                                              --
+--Explain     :Get data                                                    --
+--Create User :jliu                                                        --
+--Create Date :2018-10-10                                                  --
+-----------------------------------------------------------------------------
+PROCEDURE Get_Detail_Data(  company_   in VARCHAR2, 
+                            custid_    in VARCHAR2, 
+			    content_   in VARCHAR2,
+                            return_    out VARCHAR2) ;
+-----------------------------------------------------------------------------
+--Project Name:CKC HT Replace                                              --
+--Explain     :Get data                                                    --
+--Create User :jliu                                                        --
+--Create Date :2018-10-10                                                  --
+-----------------------------------------------------------------------------
+FUNCTION Get_Detail_Data(  company_   in VARCHAR2, 
+                            custid_    in VARCHAR2, 
+                            content_   in VARCHAR2 ) RETURN VARCHAR2;
+
+PROCEDURE Init;
+
+END &PKG;
+/
+SHOW ERROR
+
+UNDEFINE MODULE
+UNDEFINE LU
+UNDEFINE PKG
+-----------------------------------------------------------------------------
